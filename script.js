@@ -1,18 +1,16 @@
-// script.js
-function setTheme(theme) {
-  document.body.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-}
-
 function toggleTheme() {
-  const current = document.body.getAttribute('data-theme');
-  setTheme(current === 'dark' ? 'light' : 'dark');
+  const currentTheme = document.body.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('theme') || 'light';
-  setTheme(saved);
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.body.setAttribute('data-theme', savedTheme);
 
-  const btn = document.getElementById('themeToggle');
-  btn.addEventListener('click', toggleTheme);
+  const themeToggleButton = document.getElementById('themeToggle');
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', toggleTheme);
+  }
 });
