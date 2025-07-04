@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fileasy • API reference</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>fileasy • API Reference</h1><a href="index.html">← Home</a></header>
+
+  <section>
+    <h2>Conversion Methods</h2>
+    <dl>
+      <dt><code>fileToBase64(file: File): Promise&lt;string&gt;</code></dt>
+      <dd>Reads a File and returns a Base64 string.</dd>
+
+      <dt><code>base64ToFile(b64: string, fileName?: string, type?: string): File</code></dt>
+      <dd>Create a File from Base64 string.</dd>
+
+      <dt><code>pngToJpeg(...)</code>, <code>svgToJpeg(...)</code>, <code>pdfToPng(...)</code>, <em>etc.</em></dt>
+      <dd>Image format conversion utilities.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Metadata Methods</h2>
+    <dl>
+      <dt><code>getInfoFromFile(file: File): Promise&lt;GetInfoFromFile&gt;</code></dt>
+      <dd>Returns full file info including base64, dimensions, extension.</dd>
+
+      <dt><code>getMimeTypeFromBuffer(data: Buffer): string</code></dt>
+      <dd>Returns MIME type based on magic bytes.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Utility Methods</h2>
+    <dl>
+      <dt><code>downloadToDevice(fileData: File | ... , name?: string): void</code></dt>
+      <dd>Triggers browser download.</dd>
+
+      <dt><code>selectFile(accept?: string, maxLen?: number): Promise&lt;File[] | undefined&gt;</code></dt>
+      <dd>Opens file picker dialog.</dd>
+    </dl>
+  </section>
+
+  <footer><p>Back to <a href="usage.html">Examples</a>.</p></footer>
+</body>
+</html>

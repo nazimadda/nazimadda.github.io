@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fileasy • Usage examples</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>fileasy • Usage</h1><a href="index.html">← Home</a></header>
+
+  <section>
+    <h2>1. Convert base64 ↔ File</h2>
+    <pre><code>import { fileToBase64, base64ToFile } from 'fileasy';
+
+async function roundtrip(file) {
+  const txt = await fileToBase64(file);
+  return base64ToFile(txt, `copy.${file.type.split('/')[1]}`, file.type);
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>2. Image format conversion</h2>
+    <pre><code>import { pngToJpeg } from 'fileasy';
+
+async function convertPngToJpg(pngFile) {
+  const jpg = await pngToJpeg(pngFile, 'converted.jpg');
+  // Do something with the jpg File object
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Inspect files/buffers</h2>
+    <pre><code>import { getInfoFromFile, getMimeTypeFromBuffer } from 'fileasy';
+
+const info = await getInfoFromFile(myFile);
+console.log(info.name, info.type, info.size);
+
+fetch('/data').then(r => r.arrayBuffer())
+  .then(buf => {
+    console.log(getMimeTypeFromBuffer(Buffer.from(buf)));
+  });</code></pre>
+  </section>
+
+  <footer>
+    <p>See full API reference: <a href="api.html">API →</a></p>
+  </footer>
+</body>
+</html>

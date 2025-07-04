@@ -1,1 +1,45 @@
-Peekabo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fileasy • Simple client‑side file utilities</title>
+  <meta name="description" content="fileasy — TypeScript/JavaScript library for file type detection and conversion in the browser.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>fileasy</h1>
+    <p>Client‑side file utilities: convert, inspect, download, and more.</p>
+    <p>
+      <a href="https://www.npmjs.com/package/fileasy" target="_blank">npm</a> •
+      <a href="https://fileasy.rucuru.com/" target="_blank">Docs</a> •
+      <a href="https://github.com/your‑org/fileasy" target="_blank">GitHub</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Key features</h2>
+    <ul>
+      <li>Convert images: <code>svgToPng</code>, <code>jpegToPng</code>, etc.</li>
+      <li>File & buffer conversion: <code>fileToBase64</code>, <code>base64ToFile</code>, <code>binaryToString</code></li>
+      <li>Get file metadata: <code>getInfoFromFile</code>, <code>getMimeTypeFromBuffer</code></li>
+      <li>Download and select files in the browser</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Quick Start</h2>
+    <pre><code>npm install fileasy</code></pre>
+    <p>Then:</p>
+    <pre><code>import { fileToBase64, base64ToFile } from 'fileasy';
+
+const base64 = await fileToBase64(myFile);
+const restored = base64ToFile(base64, 'restored.png', 'image/png');</code></pre>
+    <p>See more usage examples on the <a href="usage.html">Usage</a> and <a href="api.html">API</a> pages.</p>
+  </section>
+
+  <footer>
+    <p>Released under the ISC license. Licensed &copy; 2025 Your Name.</p>
+  </footer>
+</body>
+</html>
