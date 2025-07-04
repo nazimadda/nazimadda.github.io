@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>fileasy • Usage examples</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Fileasy – CLI Usage</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header><h1>fileasy • Usage</h1><a href="index.html">← Home</a></header>
+  <header>
+    <h1>🚀 Fileasy CLI Usage</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="usage.html">Usage</a>
+      <a href="formats.html">Formats</a>
+    </nav>
+  </header>
 
   <section>
-    <h2>1. Convert base64 ↔ File</h2>
-    <pre><code>import { fileToBase64, base64ToFile } from 'fileasy';
-
-async function roundtrip(file) {
-  const txt = await fileToBase64(file);
-  return base64ToFile(txt, `copy.${file.type.split('/')[1]}`, file.type);
-}</code></pre>
+    <h2>Command Syntax</h2>
+    <pre><code>fileasy [-h] [-c] [-m] [-f FILES [FILES ...]] [-o OUTPUT]</code></pre>
+    <ul>
+      <li><strong>-h, --help</strong>: Show help</li>
+      <li><strong>-c, --convert</strong>: Convert the input file</li>
+      <li><strong>-m, --merge</strong>: Merge the input files</li>
+      <li><strong>-f, --files</strong>: List of files to use</li>
+      <li><strong>-o, --output</strong>: Output file</li>
+    </ul>
   </section>
 
   <section>
-    <h2>2. Image format conversion</h2>
-    <pre><code>import { pngToJpeg } from 'fileasy';
+    <h2>Examples</h2>
 
-async function convertPngToJpg(pngFile) {
-  const jpg = await pngToJpeg(pngFile, 'converted.jpg');
-  // Do something with the jpg File object
-}</code></pre>
-  </section>
+    <h3>Convert an image to PDF</h3>
+    <pre><code>fileasy -c -f image.jpg -o output.pdf</code></pre>
 
-  <section>
-    <h2>3. Inspect files/buffers</h2>
-    <pre><code>import { getInfoFromFile, getMimeTypeFromBuffer } from 'fileasy';
+    <h3>Convert a PDF to images</h3>
+    <pre><code>fileasy -c -f document.pdf -o image_output.jpg</code></pre>
 
-const info = await getInfoFromFile(myFile);
-console.log(info.name, info.type, info.size);
+    <h3>Merge multiple PDF files</h3>
+    <pre><code>fileasy -m -f file1.pdf file2.pdf -o merged.pdf</code></pre>
 
-fetch('/data').then(r => r.arrayBuffer())
-  .then(buf => {
-    console.log(getMimeTypeFromBuffer(Buffer.from(buf)));
-  });</code></pre>
+    <h3>Convert and merge multiple images into one PDF</h3>
+    <pre><code>fileasy -c -m -f img1.jpg img2.jpg -o merged.pdf</code></pre>
   </section>
 
   <footer>
-    <p>See full API reference: <a href="api.html">API →</a></p>
+    <p><a href="https://github.com/nazimadda/fileasy">GitHub Repo ↗</a></p>
   </footer>
 </body>
 </html>

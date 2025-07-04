@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>fileasy • Simple client‑side file utilities</title>
-  <meta name="description" content="fileasy — TypeScript/JavaScript library for file type detection and conversion in the browser.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Fileasy – Simple File CLI</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>fileasy</h1>
-    <p>Client‑side file utilities: convert, inspect, download, and more.</p>
-    <p>
-      <a href="https://www.npmjs.com/package/fileasy" target="_blank">npm</a> •
-      <a href="https://fileasy.rucuru.com/" target="_blank">Docs</a> •
-      <a href="https://github.com/your‑org/fileasy" target="_blank">GitHub</a>
-    </p>
+    <h1>📄 Fileasy</h1>
+    <p>A simple CLI to convert between image files and PDFs</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="usage.html">Usage</a>
+      <a href="formats.html">Formats</a>
+      <a href="https://github.com/nazimadda/fileasy" target="_blank">GitHub ↗</a>
+    </nav>
   </header>
 
   <section>
-    <h2>Key features</h2>
+    <h2>✨ Features</h2>
     <ul>
-      <li>Convert images: <code>svgToPng</code>, <code>jpegToPng</code>, etc.</li>
-      <li>File & buffer conversion: <code>fileToBase64</code>, <code>base64ToFile</code>, <code>binaryToString</code></li>
-      <li>Get file metadata: <code>getInfoFromFile</code>, <code>getMimeTypeFromBuffer</code></li>
-      <li>Download and select files in the browser</li>
+      <li>✅ Convert images to PDF</li>
+      <li>✅ Convert PDFs to images</li>
+      <li>✅ Merge multiple PDF files</li>
+      <li>✅ Combine image conversion and merging in one step</li>
     </ul>
   </section>
 
   <section>
-    <h2>Quick Start</h2>
-    <pre><code>npm install fileasy</code></pre>
-    <p>Then:</p>
-    <pre><code>import { fileToBase64, base64ToFile } from 'fileasy';
-
-const base64 = await fileToBase64(myFile);
-const restored = base64ToFile(base64, 'restored.png', 'image/png');</code></pre>
-    <p>See more usage examples on the <a href="usage.html">Usage</a> and <a href="api.html">API</a> pages.</p>
+    <h2>📦 Installation</h2>
+    <pre><code>pip install fileasy</code></pre>
   </section>
 
   <footer>
-    <p>Released under the ISC license. Licensed &copy; 2025 Your Name.</p>
+    <p>&copy; 2025 • Apache License • <a href="https://github.com/nazimadda/fileasy">View on GitHub</a></p>
   </footer>
 </body>
 </html>
